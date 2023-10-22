@@ -1,16 +1,18 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Marker Felt", sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
+    color: #333;
+    background-color: tan;
   }
-  
   /* Navigation Bar */
   nav {
     background-color: #333;
     color: #fff;
     text-align: center;
+    padding: 10px 0;
   }
   
   nav ul {
@@ -27,6 +29,7 @@ body {
   nav a {
     text-decoration: none;
     color: #fff;
+    padding: 10px;
   }
   
   nav a:hover {
@@ -35,10 +38,14 @@ body {
   
   /* Header Styles */
   header {
-    background-color: #6495ED;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #644117;
     color: #fff;
     text-align: center;
     padding: 20px;
+    
   }
   
   /* Main Content Styles */
@@ -57,6 +64,8 @@ body {
     background-color: #333;
     color: #fff;
     text-decoration: none;
+    padding: 10px 10px;
+    text-align: center;
   }
   
   /* Navigation Highlight */
@@ -65,18 +74,36 @@ body {
   }
   
   #links li a:hover {
-    background-color: #6495ED;
+    background-color: #644117;
+    transition: background-color 0.5s ease;
     color: #fff;
   }
   #links li a.active {
     text-decoration: underline;
     font-weight: bold;
 }
-  
+.header-image {
+  max-height: 100px; /* Adjust the height as needed */
+}
+
+.left-image {
+  margin-right: 20px;
+}
+
+.right-image {
+  margin-left: 20px;
+}
+img {
+  border-radius: 10px;
+}
+p{
+  display: list-item;
+}
+
   /* Mobile Devices */
   @media (max-width: 768px) {
     main {
-      display: block; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 768px));
       text-align: center;
     }
     #skip {
@@ -97,9 +124,10 @@ body {
       max-width: 100%; 
     }
   
-    p {
-      text-align: left; 
-      margin: 10px 0; 
+    .ps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
   
     h3 {
@@ -119,4 +147,24 @@ body {
     }
     
   }
+  h2{
+    transition: transform 1s ease;
+  }
+  h2:hover{
+    transform: scale(1.2);
+  }
+  
+  
+  /* Apply a slight backdrop to all images */
+  
+
+  @media (prefers-reduced-motion) {
+    #links li a:hover {
+      background-color: #644117;
+      color: #fff;
+    }
+    .gif {
+        display: none;
+    }
+}
   
